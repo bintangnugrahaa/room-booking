@@ -26,7 +26,7 @@
                             </div>
                             <div class="flex flex-col gap-[2px]">
                                 <h3 class="font-semibold">{{ $category->name }}</h3>
-                                <p class="text-sm text-ngekos-grey">{{ $category->boarding_houses_count }} Kos</p>
+                                <p class="text-sm text-ngekos-grey">{{ $category->boardingHouses->count() }} Kos</p>
                             </div>
                         </div>
                     </a>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="flex flex-col gap-[2px]">
                             <h3 class="font-semibold">{{ $city->name }}</h3>
-                            <p class="text-sm text-ngekos-grey">{{ $city->boarding_houses_count }} Kos</p>
+                            <p class="text-sm text-ngekos-grey">{{ $city->boardingHouses->count() }} Kos</p>
                         </div>
                     </div>
                 </a>
