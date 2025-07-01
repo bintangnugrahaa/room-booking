@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Interfaces\CityRepositoryInterface;
 use App\Interfaces\CategoryRepositoryInterface;
 use App\Interfaces\BoardingHouseRepositoryInterface;
+use Illuminate\Http\Request;
 
 class BoardingHouseController extends Controller
 {
@@ -28,5 +29,12 @@ class BoardingHouseController extends Controller
         $categories = $this->categoryRepository->getAllCategories();
 
         return view('pages.boarding-house.find', compact('cities', 'categories'));
+    }
+
+    public function findResult(Request $request)
+    {
+        $boardingHouses = $this->boardingHouseRepository->getAllBoardingHouses($request->city, $request->category, $request->search);
+
+        return view('pages.boarding-house.index', compact('boardingHouses'));
     }
 }
