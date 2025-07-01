@@ -18,148 +18,32 @@
         </div>
     </div>
     <section id="Result" class=" relative flex flex-col gap-4 px-5 mt-5 mb-9">
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-4.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">{{ $boardingHouses->name }}</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">{{ $boardingHouses->city->name }}</p>
+        @foreach ($boardingHouses as $boardingHouse)
+            <a href="details.html" class="card">
+                <div
+                    class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
+                    <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
+                        <img src="assets/images/thumbnails/kos-4.png" class="w-full h-full object-cover" alt="icon">
                     </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">{{ $boardingHouses->capacity }} People</p>
+                    <div class="flex flex-col gap-3 w-full">
+                        <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">
+                            {{ $boardingHouse->name }}</h3>
+                        <hr class="border-[#F1F2F6]">
+                        <div class="flex items-center gap-[6px]">
+                            <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
+                            <p class="text-sm text-ngekos-grey">{{ $boardingHouse->city->name }}</p>
+                        </div>
+                        <div class="flex items-center gap-[6px]">
+                            <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
+                            <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} People</p>
+                        </div>
+                        <hr class="border-[#F1F2F6]">
+                        <p class="font-semibold text-lg text-ngekos-orange">Rp
+                            {{ number_format($boardingHouse->price, 0, ',', '.') }}<span
+                                class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
                     </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp {{ number_format($boardingHouses->price, 0, ',', '.') }}<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
                 </div>
-            </div>
-        </a>
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-5.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">Tumbuh Tentram Berada Rumah
-                        Nenek</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">Singapore City</p>
-                    </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">4 People</p>
-                    </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp 4.593.444<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
-                </div>
-            </div>
-        </a>
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-6.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">Tumbuh Tentram Berada Rumah
-                        Nenek</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">Singapore City</p>
-                    </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">4 People</p>
-                    </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp 4.593.444<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
-                </div>
-            </div>
-        </a>
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-4.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">Tumbuh Tentram Berada Rumah
-                        Nenek</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">Singapore City</p>
-                    </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">4 People</p>
-                    </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp 4.593.444<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
-                </div>
-            </div>
-        </a>
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-5.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">Tumbuh Tentram Berada Rumah
-                        Nenek</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">Singapore City</p>
-                    </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">4 People</p>
-                    </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp 4.593.444<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
-                </div>
-            </div>
-        </a>
-        <a href="details.html" class="card">
-            <div
-                class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                    <img src="assets/images/thumbnails/kos-6.png" class="w-full h-full object-cover" alt="icon">
-                </div>
-                <div class="flex flex-col gap-3 w-full">
-                    <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">Tumbuh Tentram Berada Rumah
-                        Nenek</h3>
-                    <hr class="border-[#F1F2F6]">
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">Singapore City</p>
-                    </div>
-                    <div class="flex items-center gap-[6px]">
-                        <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                        <p class="text-sm text-ngekos-grey">4 People</p>
-                    </div>
-                    <hr class="border-[#F1F2F6]">
-                    <p class="font-semibold text-lg text-ngekos-orange">Rp 4.593.444<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
-                </div>
-            </div>
-        </a>
+            </a>
+        @endforeach
     </section>
 @endsection
