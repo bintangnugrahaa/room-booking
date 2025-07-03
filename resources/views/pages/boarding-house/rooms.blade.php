@@ -5,11 +5,11 @@
         class="absolute top-0 w-full h-[230px] rounded-b-[75px] bg-[linear-gradient(180deg,#F2F9E6_0%,#D2EDE4_100%)]">
     </div>
     <div id="TopNav" class="relative flex items-center justify-between px-5 mt-[60px]">
-        <a href="details.html"
+        <a href="{{ route('kos.show', $boardingHouse->slug) }}"
             class="w-12 h-12 flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white">
             <img src="{{ asset('assets/images/icons/arrow-left.svg') }}" class="w-[28px] h-[28px]" alt="icon">
         </a>
-        <p class="font-semibold">Choose Available Room</p>
+        <p class="font-semibold">Pilih Kamar Tersedia</p>
         <div class="dummy-btn w-12"></div>
     </div>
     <div id="Header" class="relative flex items-center justify-between gap-2 px-5 mt-[18px]">
@@ -26,15 +26,16 @@
                     <p class="text-sm text-ngekos-grey">Kota {{ $boardingHouse->city->name }}</p>
                 </div>
                 <div class="flex items-center gap-[6px]">
-                    <img src="{{ asset('assets/images/icons/profile-2user.svg') }}" class="w-5 h-5 flex shrink-0"
+                    <img src="{{ asset('assets/images/icons/3dcube.svg') }}" class="w-5 h-5 flex shrink-0"
                         alt="icon">
-                    <p class="text-sm text-ngekos-grey">Kategori {{ $boardingHouse->category->name }}</p>
+                    <p class="text-sm text-ngekos-grey">{{ $boardingHouse->category->name }}</p>
                 </div>
             </div>
         </div>
     </div>
-    <form action="cust-info.html" class="relative flex flex-col gap-4 mt-5">
-        <h2 class="font-bold px-5">Available Rooms</h2>
+    <form action="{{ route('booking', $boardingHouse->slug) }}" class="relative flex flex-col gap-4 mt-5">
+        @csrf
+        <h2 class="font-bold px-5">Kamar Tersedia</h2>
         <div id="RoomsContainer" class="flex flex-col gap-4 px-5">
             @foreach ($boardingHouse->rooms as $room)
                 <label class="relative group">
@@ -57,7 +58,7 @@
                             <div class="flex items-center gap-[6px]">
                                 <img src="{{ asset('assets/images/icons/3dcube.svg') }}" class="w-5 h-5 flex shrink-0"
                                     alt="icon">
-                                <p class="text-sm text-ngekos-grey">{{ $room->square_feet }} sqft flat</p>
+                                <p class="text-sm text-ngekos-grey">{{ $room->square_feet }} sqft luas</p>
                             </div>
                             <hr class="border-[#F1F2F6]">
                             <p class="font-semibold text-lg text-ngekos-orange">Rp
@@ -70,8 +71,9 @@
         </div>
         <div id="BottomButton" class="relative flex w-full h-[98px] shrink-0">
             <div class="fixed bottom-[30px] w-full max-w-[640px] px-5 z-10">
-                <button class="w-full rounded-full p-[14px_20px] bg-ngekos-orange font-bold text-white text-center">Continue
-                    Booking</button>
+                <button
+                    class="w-full rounded-full p-[14px_20px] bg-ngekos-orange font-bold text-white text-center">Lanjutkan
+                    Pemesanan</button>
             </div>
         </div>
     </form>

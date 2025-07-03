@@ -9,6 +9,8 @@ use App\Interfaces\BoardingHouseRepositoryInterface;
 use App\Repositories\CityRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\BoardingHouseRepository;
+use App\Repositories\TransactionRepository;
+use App\Interfaces\TransactionRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(CityRepositoryInterface::class, CityRepository::class);
         $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
         $this->app->bind(BoardingHouseRepositoryInterface::class, BoardingHouseRepository::class);
+        $this->app->bind(TransactionRepositoryInterface::class, TransactionRepository::class);
     }
 
     /**

@@ -18,14 +18,14 @@
     <div id="Gallery" class="swiper-gallery w-full overflow-x-hidden -mb-[38px]">
         <div class="swiper-wrapper">
             @foreach ($boardingHouse->rooms as $room)
-                @foreach ($room->roomImages as $image)
+                @if ($room->roomImages->first())
                     <div class="swiper-slide !w-fit">
                         <div class="flex shrink-0 w-[320px] h-[430px] overflow-hidden">
-                            <img src="{{ asset('storage/' . $image->image) }}" class="w-full h-full object-cover"
-                                alt="gallery thumbnails">
+                            <img src="{{ asset('storage/' . $room->roomImages->first()->image) }}"
+                                class="w-full h-full object-cover" alt="gallery thumbnails">
                         </div>
                     </div>
-                @endforeach
+                @endif
             @endforeach
         </div>
     </div>
@@ -48,7 +48,7 @@
             <div class="flex items-center gap-[6px]">
                 <img src="{{ asset('assets/images/icons/3dcube.svg') }}" class="w-[26px] h-[26px] flex shrink-0"
                     alt="icon">
-                <p class="text-ngekos-grey">Kategori {{ $boardingHouse->category->name }}</p>
+                <p class="text-ngekos-grey">{{ $boardingHouse->category->name }}</p>
             </div>
             <div class="flex items-center gap-[6px]">
                 <img src="{{ asset('assets/images/icons/profile-2user.svg') }}" class="w-[26px] h-[26px] flex shrink-0"
