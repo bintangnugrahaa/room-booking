@@ -8,12 +8,12 @@
             class="w-12 h-12 flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white">
             <img src="assets/images/icons/arrow-left.svg" class="w-[28px] h-[28px]" alt="icon">
         </a>
-        <p class="font-semibold">Search Results</p>
+        <p class="font-semibold">Hasil Pencarian</p>
         <div class="dummy-btn w-12"></div>
     </div>
     <div id="Header" class="relative flex items-center justify-between gap-2 px-5 mt-[18px]">
         <div class="flex flex-col gap-[6px]">
-            <h1 class="font-bold text-[32px] leading-[48px]">Search Result</h1>
+            <h1 class="font-bold text-[32px] leading-[48px]">Hasil Pencarian</h1>
             <p class="text-ngekos-grey">Tersedia {{ $boardingHouses->count() }} Kos</p>
         </div>
     </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="flex items-center gap-[6px]">
                             <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0" alt="icon">
-                            <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} People</p>
+                            <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} Orang</p>
                         </div>
                         <hr class="border-[#F1F2F6]">
                         <p class="font-semibold text-lg text-ngekos-orange">Rp

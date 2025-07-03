@@ -3,19 +3,19 @@
         <div class="grid grid-cols-4 h-fit rounded-[40px] justify-between py-4 px-5 bg-ngekos-black">
             <a href="{{ route('home') }}" class="flex flex-col items-center text-center gap-2">
                 <img src="assets/images/icons/global-green.svg" class="w-8 h-8 flex shrink-0" alt="icon">
-                <span class="font-semibold text-sm text-white">Discover</span>
+                <span class="font-semibold text-sm text-white">Jelajahi</span>
             </a>
             <a href="{{ route('check-booking') }}" class="flex flex-col items-center text-center gap-2">
                 <img src="assets/images/icons/note-favorite.svg" class="w-8 h-8 flex shrink-0" alt="icon">
-                <span class="font-semibold text-sm text-white">Orders</span>
+                <span class="font-semibold text-sm text-white">Pesanan</span>
             </a>
             <a href="{{ route('find-kos') }}" class="flex flex-col items-center text-center gap-2">
                 <img src="assets/images/icons/search-status.svg" class="w-8 h-8 flex shrink-0" alt="icon">
-                <span class="font-semibold text-sm text-white">Find</span>
+                <span class="font-semibold text-sm text-white">Cari</span>
             </a>
             <a href="#" class="flex flex-col items-center text-center gap-2">
                 <img src="assets/images/icons/24-support.svg" class="w-8 h-8 flex shrink-0" alt="icon">
-                <span class="font-semibold text-sm text-white">Help</span>
+                <span class="font-semibold text-sm text-white">Bantuan</span>
             </a>
         </div>
     </nav>
