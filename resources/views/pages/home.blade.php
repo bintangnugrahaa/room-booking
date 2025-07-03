@@ -6,8 +6,8 @@
     </div>
     <div id="TopNav" class="relative flex items-center justify-between px-5 mt-[60px]">
         <div class="flex flex-col gap-1">
-            <p>Good day,</p>
-            <h1 class="font-bold text-xl leading-[30px]">Explore Cozy Home</h1>
+            <p>Selamat pagi,</p>
+            <h1 class="font-bold text-xl leading-[30px]">Jelajahi Rumah Nyaman</h1>
         </div>
         <a href="#" class="w-12 h-12 flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white">
             <img src="assets/images/icons/notification.svg" class="w-[28px] h-[28px]" alt="icon">
@@ -36,10 +36,10 @@
     </div>
     <section id="Popular" class="flex flex-col gap-4">
         <div class="flex items-center justify-between px-5">
-            <h2 class="font-bold">Popular Kos</h2>
+            <h2 class="font-bold">Kos Populer</h2>
             <a href="#">
                 <div class="flex items-center gap-2">
-                    <span>See all</span>
+                    <span>Lihat semua</span>
                     <img src="assets/images/icons/arrow-right.svg" class="w-6 h-6 flex shrink-0" alt="icon">
                 </div>
             </a>
@@ -67,12 +67,12 @@
                                     <div class="flex items-center gap-[6px]">
                                         <img src="assets/images/icons/3dcube.svg" class="w-5 h-5 flex shrink-0"
                                             alt="icon">
-                                        <p class="text-sm text-ngekos-grey">In {{ $boardingHouse->category->name }}</p>
+                                        <p class="text-sm text-ngekos-grey">Dalam {{ $boardingHouse->category->name }}</p>
                                     </div>
                                     <div class="flex items-center gap-[6px]">
                                         <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0"
                                             alt="icon">
-                                        <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} People</p>
+                                        <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} Orang</p>
                                     </div>
                                     <hr class="border-[#F1F2F6]">
                                     <p class="font-semibold text-lg text-ngekos-orange">Rp
@@ -88,17 +88,17 @@
     </section>
     <section id="Cities" class="flex flex-col p-5 gap-4 bg-[#F5F6F8] mt-[30px]">
         <div class="flex items-center justify-between">
-            <h2 class="font-bold">Browse Cities</h2>
+            <h2 class="font-bold">Jelajahi Kota</h2>
             <a href="#">
                 <div class="flex items-center gap-2">
-                    <span>See all</span>
+                    <span>Lihat semua</span>
                     <img src="assets/images/icons/arrow-right.svg" class="w-6 h-6 flex shrink-0" alt="icon">
                 </div>
             </a>
         </div>
         <div class="grid grid-cols-2 gap-4">
             @foreach ($cities as $city)
-                <a href="cities.html" class="card">
+                <a href="{{ route('city.show', $city->slug) }}" class="card">
                     <div
                         class="flex items-center rounded-[22px] p-[10px] gap-3 bg-white border border-white overflow-hidden hover:border-[#91BF77] transition-all duration-300">
                         <div
@@ -117,10 +117,10 @@
     </section>
     <section id="Best" class="flex flex-col gap-4 px-5 mt-[30px]">
         <div class="flex items-center justify-between">
-            <h2 class="font-bold">All Great Koskos</h2>
+            <h2 class="font-bold">Semua Kos Terbaik</h2>
             <a href="#">
                 <div class="flex items-center gap-2">
-                    <span>See all</span>
+                    <span>Lihat semua</span>
                     <img src="assets/images/icons/arrow-right.svg" class="w-6 h-6 flex shrink-0" alt="icon">
                 </div>
             </a>
@@ -145,7 +145,7 @@
                             <div class="flex items-center gap-[6px]">
                                 <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0"
                                     alt="icon">
-                                <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} People</p>
+                                <p class="text-sm text-ngekos-grey">{{ $boardingHouse->capacity }} Orang</p>
                             </div>
                             <hr class="border-[#F1F2F6]">
                             <p class="font-semibold text-lg text-ngekos-orange">Rp
