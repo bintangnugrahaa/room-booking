@@ -35,7 +35,6 @@ const minusButton = document.getElementById('Minus');
 const plusButton = document.getElementById('Plus');
 const durationInput = document.getElementById('Duration');
 const priceElement = document.getElementById('price');
-const defaultPrice = 793444;
 const maxDuration = 999; // Maximum allowed value
 
 function updatePrice() {
