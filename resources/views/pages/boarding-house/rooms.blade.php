@@ -26,14 +26,14 @@
                     <p class="text-sm text-ngekos-grey">Kota {{ $boardingHouse->city->name }}</p>
                 </div>
                 <div class="flex items-center gap-[6px]">
-                    <img src="{{ asset('assets/images/icons/3dcube.svg') }}" class="w-5 h-5 flex shrink-0"
-                        alt="icon">
+                    <img src="{{ asset('assets/images/icons/3dcube.svg') }}" class="w-5 h-5 flex shrink-0" alt="icon">
                     <p class="text-sm text-ngekos-grey">{{ $boardingHouse->category->name }}</p>
                 </div>
             </div>
         </div>
     </div>
     <form action="{{ route('booking', $boardingHouse->slug) }}" class="relative flex flex-col gap-4 mt-5">
+        <input type="hidden" name="boarding_house_id" value="{{ $boardingHouse->id }}">
         @csrf
         <h2 class="font-bold px-5">Kamar Tersedia</h2>
         <div id="RoomsContainer" class="flex flex-col gap-4 px-5">

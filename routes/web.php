@@ -19,3 +19,4 @@ Route::get('/kos/booking/{slug}/information', [BookingController::class, 'inform
 Route::post('/kos/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('booking.information.save');
 Route::get('/kos/booking/{slug}', [BookingController::class, 'booking'])->name('booking');
 Route::get('/kos/booking/{slug}/checkout', [BookingController::class, 'checkout'])->name('booking.checkout');
+Route::post('/kos/booking/{slug}/payment', [BookingController::class, 'payment'])->name('booking.payment');
