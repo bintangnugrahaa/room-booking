@@ -61,7 +61,9 @@
             </div>
         </div>
     </div>
-    <form action="checkout.html" class="relative flex flex-col gap-6 mt-5 pt-5 bg-[#F5F6F8]">
+    <form action="{{ route('booking.information.save', $boardingHouse->slug) }}"
+        class="relative flex flex-col gap-6 mt-5 pt-5 bg-[#F5F6F8]" method="POST">
+        @csrf
         <div class="flex flex-col gap-[6px] px-5">
             <h1 class="font-semibold text-lg">Informasi Anda</h1>
             <p class="text-sm text-ngekos-grey">Isi kolom di bawah dengan data yang valid</p>
@@ -70,33 +72,42 @@
             <div class="flex flex-col w-full gap-2 px-5">
                 <p class="font-semibold">Nama Lengkap</p>
                 <label
-                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300">
+                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300 @error('name') border-red-500 @enderror">
                     <img src="{{ asset('assets/images/icons/profile-2user.svg') }}" class="w-5 h-5 flex shrink-0"
                         alt="icon">
-                    <input type="text" name="" id=""
+                    <input type="text" name="name" id=""
                         class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Tulis nama Anda">
+                        placeholder="Tulis nama Anda" value="{{ old('name') }}">
                 </label>
+                @error('name')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col w-full gap-2 px-5">
                 <p class="font-semibold">Alamat Email</p>
                 <label
-                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300">
+                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300 @error('email') border-red-500 @enderror">
                     <img src="{{ asset('assets/images/icons/sms.svg') }}" class="w-5 h-5 flex shrink-0" alt="icon">
-                    <input type="email" name="" id=""
+                    <input type="email" name="email" id=""
                         class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Tulis email Anda">
+                        placeholder="Tulis email Anda" value="{{ old('email') }}">
                 </label>
+                @error('email')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col w-full gap-2 px-5">
                 <p class="font-semibold">Nomor Telepon</p>
                 <label
-                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300">
+                    class="flex items-center w-full rounded-full p-[14px_20px] gap-3 bg-white focus-within:ring-1 focus-within:ring-[#91BF77] transition-all duration-300 @error('phone') border-red-500 @enderror">
                     <img src="{{ asset('assets/images/icons/call.svg') }}" class="w-5 h-5 flex shrink-0" alt="icon">
-                    <input type="tel" name="" id=""
+                    <input type="tel" name="phone" id=""
                         class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                        placeholder="Tulis nomor telepon Anda">
+                        placeholder="Tulis nomor telepon Anda" value="{{ old('phone') }}">
                 </label>
+                @error('phone')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex items-center justify-between px-5">
                 <p class="font-semibold">Durasi (Bulan)</p>
